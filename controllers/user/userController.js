@@ -29,6 +29,8 @@ const submitFormData = async (req, res) => {
       text: `Name: ${name}\nEmail: ${email}\nMobile: ${mobile}\nSubject: ${subject}\nMessage:\n${message}`,
     });
 
+    console.log('Mailgun response:', msg);
+
     res.status(200).json({ success: true, message: 'Form sent successfully', id: msg.id });
   } catch (error) {
     console.error('Mailgun error:', error.response?.body || error);
