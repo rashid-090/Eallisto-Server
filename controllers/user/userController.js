@@ -19,7 +19,7 @@ const submitFormData = async (req, res) => {
   if (!name || !email || !mobile) {
     return res.status(400).json({ success: false, error: 'All fields are required'});
   }
-  return res.status(200).json({ success: true, message: 'Form data received successfully' });
+  // return res.status(200).json({ success: true, message: 'Form data received successfully' });
 
   try {
     const msg = await mg.messages.create(process.env.MAILGUN_DOMAIN, {
