@@ -23,7 +23,7 @@ const submitFormData = async (req, res) => {
 
   try {
     const msg = await mg.messages.create(process.env.MAILGUN_DOMAIN, {
-      from: `${name} <${email}>`,
+      from: `${email}`,
       to: [process.env.CLIENT_EMAIL],
       subject: `New Contact Form Submission - ${subject}`,
       text: `Name: ${name}\nEmail: ${email}\nMobile: ${mobile}\nSubject: ${subject}\nMessage:\n${message}`,
